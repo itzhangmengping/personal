@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<style>
+*{padding:0;margin:0}
+body{ background:#000; text-align:center; font-size:60px; color:#fff; line-height:100px;}
+</style>
+<script>
+function todou(inum){
+	return inum<10?'0'+inum:''+inum;	
+}
+window.onload=function(){
+	var oBox=document.getElementsByTagName('p')[1];
+	var Itarget=new Date;
+	Itarget.setFullYear(2015,12,1)
+	Itarget.setHours(0,0,0,0)
+	var Target=Itarget.getTime()
+	function depart(){
+		var inow=new Date();
+		var Now=inow.getTime();
+		var s = parseInt((Target-Now)/1000);
+		var d = parseInt(s/86400);
+		s%=86400;
+		var h = parseInt(s/3600);
+		s%=3600;
+		var m = parseInt(s/60);
+		s%=60;
+		oBox.innerHTML=d+'天'+todou(h)+'时'+todou(m)+'分'+todou(s);
+
+	}
+	depart()
+	setInterval(function (){
+		depart()} 
+		,1000)
+}
+</script>
+<body>
+<p>距离2016年1月1日还有</p>
+<p></p>
+</body>
+</html>

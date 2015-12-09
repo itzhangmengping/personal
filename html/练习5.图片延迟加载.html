@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<style>
+ul{ overflow:hidden; list-style:none;}
+li{ float:left; width:500px; height:500px; border:1px solid #000;}
+li img{ width:100%;}
+</style>
+<script>
+window.onload=window.onscroll=window.onresize=function(){
+	var aImg=document.getElementsByTagName('img');
+	var scrollT=document.documentElement.scrollTop||document.body.scrollTop;
+	var scrollB=scrollT+document.documentElement.clientHeight;
+	for(var i=0;i<aImg.length;i++){
+		if(aImg[i].offsetTop<scrollB){
+			aImg[i].src=aImg[i].getAttribute('_src');	
+		}	
+	}
+}
+
+</script>
+<body>
+<ul>
+	<li><img _src="images/1.jpg"/></li>
+    <li><img _src="images/2.jpg"/></li>
+    <li><img _src="images/3.jpg"/></li>
+    <li><img _src="images/4.jpg"/></li>
+    <li><img _src="images/5.jpg"/></li>
+    <li><img _src="images/6.jpg"/></li>
+    <li><img _src="images/7.jpg"/></li>
+    <li><img _src="images/8.jpg"/></li>
+    <li><img _src="images/9.jpg"/></li>
+    <li><img _src="images/1.jpg"/></li>
+    <li><img _src="images/2.jpg"/></li>
+    <li><img _src="images/3.jpg"/></li>
+    <li><img _src="images/4.jpg"/></li>
+    <li><img _src="images/5.jpg"/></li>
+    <li><img _src="images/6.jpg"/></li>
+    <li><img _src="images/7.jpg"/></li>
+    <li><img _src="images/8.jpg"/></li>
+    <li><img _src="images/9.jpg"/></li>
+</ul>
+</body>
+</html>
